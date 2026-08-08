@@ -1,0 +1,97 @@
+
+class Main {
+
+    public static void main(String[] args) {
+
+        int student = 1;
+        String studentName;
+        double academicPercentage;
+        double attendancePercentage;
+        int activeBacklogs;
+        boolean projectCompleted;
+        int communicationScore;
+        int aptitudeScore;
+        while (student <= 2) {
+            if (student == 1) {
+                studentName = "AKULA BHAVANA LAXMI";
+                academicPercentage = 73.4;
+                attendancePercentage = 81;
+                activeBacklogs = 0;
+                projectCompleted = true;
+                communicationScore = 68;
+                aptitudeScore = 74;
+            } else {
+                studentName = "Kiran";
+                academicPercentage = 73.4;
+                attendancePercentage = 70;
+                activeBacklogs = 0;
+                projectCompleted = false;
+                communicationScore = 68;
+                aptitudeScore = 50;
+            }
+            boolean academicEligible = academicPercentage >= 60;
+            boolean attendanceEligible = attendancePercentage
+                    >= 75;
+            boolean backlogEligible = activeBacklogs == 0;
+            boolean projectEligible = projectCompleted;
+            boolean communicationEligible = communicationScore >= 60;
+            boolean aptitudeEligible = aptitudeScore >= 60;
+
+            boolean overallEligible = academicEligible && attendanceEligible && backlogEligible && projectEligible && communicationEligible && aptitudeEligible;
+
+            System.out.println("PLACEMENT READINESS REPORT");
+            System.out.println();
+
+            System.out.println("Student Name: " + studentName);
+
+            System.out.println("academic Status: " + (academicEligible ? "Eligible" : " Not Eligible"));
+
+            System.out.println("attendance Status: " + (attendanceEligible ? "Eligible" : " Not Eligible"));
+
+            System.out.println("Backlog Status: " + (backlogEligible ? "Eligible" : " Not Eligible"));
+
+            System.out.println("Project Status: " + (projectEligible ? "Completed" : "Not completed"));
+
+            System.out.println("Communication Status: " + (communicationEligible ? "Eligible" : " Not Eligible"));
+
+            System.out.println("Aptitude Status: " + (aptitudeEligible ? "Eligible" : " Needs Improvement"));
+
+            System.out.println("================================================");
+
+            if (overallEligible) {
+                System.out.println("Final Result: PLACEMENT READY");
+                System.out.println("Message: All placement requirements are satisfied.");
+
+            } else {
+                System.out.println("Final Result: NOT PLACEMENT READY");
+                System.out.println();
+                System.out.println("Areas to Improve:");
+
+                if (!academicEligible) {
+                    System.out.println("Academic Percentage");
+                }
+                if (!attendanceEligible) {
+                    System.out.println("Attendance");
+                }
+                if (!backlogEligible) {
+                    System.out.println("Clear Active Backlogs");
+                }
+
+                if (!projectEligible) {
+                    System.out.println("Project Completion");
+                }
+                if (!communicationEligible) {
+                    System.out.println("Communication Skills");
+                }
+                if (!aptitudeEligible) {
+                    System.out.println("Aptitude Score");
+                }
+            }
+            System.out.println();
+            System.out.println("========================================");
+            System.out.println();
+
+            student++;
+        }
+    }
+}

@@ -1,0 +1,103 @@
+
+class Main {
+
+    public static void main(String[] args) {
+
+        int day = 1;
+
+        int attempted = 0;
+        int solved = 0;
+        double hours = 0;
+
+        int totalAttempted = 0;
+        int totalSolved = 0;
+        double totalHours = 0;
+
+        int productiveDays = 0;
+        int nonProductiveDays = 0;
+
+        while (day <= 7) {
+
+            if (day == 1) {
+                attempted = 6;
+                solved = 5;
+                hours = 2.5;
+            } else if (day == 2) {
+                attempted = 5;
+                solved = 4;
+                hours = 1.5;
+            } else if (day == 3) {
+                attempted = 7;
+                solved = 7;
+                hours = 3.0;
+            } else if (day == 4) {
+                attempted = 6;
+                solved = 5;
+                hours = 2.5;
+            } else if (day == 5) {
+                attempted = 5;
+                solved = 4;
+                hours = 1.5;
+            } else if (day == 6) {
+                attempted = 6;
+                solved = 6;
+                hours = 3.0;
+            } else {
+                attempted = 5;
+                solved = 5;
+                hours = 3.5;
+            }
+
+            totalAttempted += attempted;
+            totalSolved += solved;
+            totalHours += hours;
+
+            if (solved >= 5 && hours >= 2.0) {
+                productiveDays++;
+            } else {
+                nonProductiveDays++;
+            }
+
+            day++;
+        }
+
+        double successPercentage;
+
+        if (totalAttempted > 0) {
+            successPercentage = ((double) totalSolved / totalAttempted) * 100;
+        } else {
+            successPercentage = 0;
+        }
+
+        double averageSolvedPerDay = (double) totalSolved / 7;
+
+        String weeklyTargetStatus
+                = (totalSolved >= 35) ? "Achieved" : "Not Achieved";
+
+        String consistencyStatus
+                = (productiveDays >= 5) ? "Good" : "Needs Improvement";
+
+        System.out.println("WEEKLY CODING PRACTICE REPORT");
+        System.out.println();
+
+        System.out.println("Total Problems Attempted: " + totalAttempted);
+        System.out.println("Total Problems Solved: " + totalSolved);
+
+        System.out.printf("Success Percentage: %.1f%%%n", successPercentage);
+
+        System.out.println("Total Practice Hours: " + totalHours);
+
+        System.out.printf("Average Problems Solved Per Day: %.2f%n",
+                averageSolvedPerDay);
+
+        System.out.println();
+
+        System.out.println("Productive Days: " + productiveDays);
+        System.out.println("Non-Productive Days: " + nonProductiveDays);
+
+        System.out.println();
+
+        System.out.println("Weekly Target: " + weeklyTargetStatus);
+        System.out.println("Consistency Status: " + consistencyStatus);
+    }
+}
