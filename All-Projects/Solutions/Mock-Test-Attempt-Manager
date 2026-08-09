@@ -1,0 +1,69 @@
+
+class Main {
+
+    public static void main(String[] args) {
+        int Score = 0;
+        boolean passed = false;
+
+        int CorrectAnswers = 0;
+        int inCorrectAnswers = 0;
+
+        int maxAttempts = 3;
+        int attempts = 1;
+
+        int bestScore = 0;
+        int passAttempt = 0;
+
+        System.out.println("MOCK TEST ATTEMPT REPORT");
+        System.out.println();
+
+        while (attempts <= maxAttempts && !passed) {
+
+            if (attempts == 1) {
+                Score = 48;
+                CorrectAnswers = 24;
+                inCorrectAnswers = 26;
+            } else if (attempts == 2) {
+                Score = 57;
+                CorrectAnswers = 29;
+                inCorrectAnswers = 21;
+            } else if (attempts == 3) {
+                Score = 68;
+                CorrectAnswers = 34;
+                inCorrectAnswers = 16;
+            }
+            if (Score > bestScore) {
+                bestScore = Score;
+            }
+
+            System.out.println("Attempt " + attempts);
+            System.out.println("Score: " + Score);
+
+            String result = (Score >= 60) ? "Passed" : "Failed";
+            System.out.println("Result: " + result);
+
+            if (Score >= 60) {
+                passed = true;
+                passAttempt = attempts;
+            } else {
+                int remainingAttempts = maxAttempts - attempts;
+                System.out.println("Remaining Attempts: "
+                        + remainingAttempts);
+            }
+
+            System.out.println();
+            attempts++;
+        }
+
+        System.out.println("Best Score: " + bestScore);
+
+        if (passed) {
+            System.out.println("Final Result: MOCK TEST CLEARED");
+            System.out.println("Message: Student passed on attempt "
+                    + passAttempt + ".");
+        } else {
+            System.out.println("Final Result: MOCK TEST NOT CLEARED");
+            System.out.println("Message: Student failed all attempts.");
+        }
+    }
+}

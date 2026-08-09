@@ -1,0 +1,23 @@
+MONTHLY FINANCIAL REPORT
+
+Scenario: 1
+Monthly Income: 70000.0
+Total Expenses: 50000.0
+Savings: 20000.0
+
+Expense Percentage: 71.43%
+Savings Percentage: 28.57%
+
+Financial Category: Good
+Message: Savings are healthy but can be improved.      
+
+Scenario: 2
+Monthly Income: 50000.0
+Total Expenses: 45000.0
+Savings: 5000.0
+
+Expense Percentage: 90.00%
+Savings Percentage: 10.00%
+
+Financial Category: Needs Improvement
+Message: Reduce expenses and improve savings.
