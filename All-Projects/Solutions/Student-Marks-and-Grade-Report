@@ -1,0 +1,137 @@
+
+class Main {
+
+    public static void main(String[] args) {
+
+        int student = 1;
+
+        System.out.println("MONTHLY STUDENT MARKS REPORT");
+        System.out.println();
+
+        while (student <= 2) {
+
+            String studentName = "";
+
+            int totalMarks = 0;
+            double average = 0.0;
+            double percentage = 0.0;
+            int passedCount = 0;
+            int failedCount = 0;
+
+            int subject = 1;
+            int mark = 0;
+
+            if (student == 1) {
+                studentName = "AKULA BHAVANA LAXMI";
+            } else {
+                studentName = "Kiran";
+            }
+
+            while (subject <= 5) {
+
+                if (student == 1) {
+
+                    if (subject == 1) {
+                        mark = 90;
+                    } else if (subject == 2) {
+                        mark = 21;
+                    } else if (subject == 3) {
+                        mark = 78;
+                    } else if (subject == 4) {
+                        mark = 95;
+                    } else {
+                        mark = 74;
+                    }
+
+                } else {
+
+                    if (subject == 1) {
+                        mark = 70;
+                    } else if (subject == 2) {
+                        mark = 81;
+                    } else if (subject == 3) {
+                        mark = 75;
+                    } else if (subject == 4) {
+                        mark = 97;
+                    } else {
+                        mark = 84;
+                    }
+                }
+
+                if (mark >= 0 && mark <= 100) {
+
+                    totalMarks += mark;
+
+                    if (mark >= 35) {
+                        passedCount++;
+                    } else {
+                        failedCount++;
+                    }
+
+                } else {
+                    System.out.println("Invalid mark found for subject " + subject);
+                }
+
+                subject++;
+            }
+
+            average = (double) totalMarks / 5;
+            percentage = ((double) totalMarks / 500) * 100;
+
+            String result = (failedCount == 0) ? "PASS" : "FAIL";
+
+            String grade;
+
+            if (failedCount == 0) {
+
+                if (percentage >= 90) {
+                    grade = "A+";
+                } else if (percentage >= 80) {
+                    grade = "A";
+                } else if (percentage >= 70) {
+                    grade = "B";
+                } else if (percentage >= 60) {
+                    grade = "C";
+                } else if (percentage >= 50) {
+                    grade = "D";
+                } else {
+                    grade = "Needs Improvement";
+                }
+
+            } else {
+                grade = "Needs Improvement";
+            }
+
+            String eligibility = (failedCount == 0 && percentage >= 50)
+                    ? "Eligible"
+                    : "Not Eligible";
+
+            String message;
+
+            if (failedCount == 0) {
+                message = "Continue Hard Work";
+            } else {
+                message = "Next year will be better";
+            }
+
+            System.out.println("Student Name: " + studentName);
+            System.out.println("Total Marks: " + totalMarks);
+            System.out.printf("Average Marks: %.2f%n", average);
+            System.out.printf("Percentage: %.2f%%%n", percentage);
+            System.out.println();
+
+            System.out.println("Passed Subjects: " + passedCount);
+            System.out.println("Failed Subjects: " + failedCount);
+            System.out.println();
+
+            System.out.println("Overall Result: " + result);
+            System.out.println("Grade: " + grade);
+            System.out.println("Next-Level Eligibility: " + eligibility);
+            System.out.println("Final Message: " + message);
+
+            System.out.println("----------------------------------");
+
+            student++;
+        }
+    }
+}
