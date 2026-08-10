@@ -1,0 +1,125 @@
+
+class Main {
+
+    public static void main(String[] args) {
+        int firstNumber = 12;
+        int secondNumber = 5;
+
+        int choice1 = 1;
+        int choice2 = 6;
+        int choice3 = 8;
+        int choice4 = 10;
+
+        int operation = 1;
+        int choice = 0;
+        System.out.println("FIRST NUMBER: " + firstNumber);
+        System.out.println("SECOND NUMBER: " + secondNumber);
+        System.out.println();
+        do {
+            switch (operation) {
+                case 1:
+                    choice = choice1;
+                    break;
+                case 2:
+                    choice = choice2;
+                    break;
+                case 3:
+                    choice = choice3;
+                    break;
+                case 4:
+                    choice = choice4;
+                    break;
+            }
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Selected Operation: Addition ");
+                    System.out.println("Result: " + (firstNumber + secondNumber));
+                    System.out.println();
+
+                    break;
+                case 2:
+                    System.out.println("Selected Operation: Subtraction ");
+                    System.out.println("Result: " + (firstNumber - secondNumber));
+                    System.out.println();
+
+                    break;
+                case 3:
+                    System.out.println("Selected Operation: Multiplication ");
+                    System.out.println("Result: " + (firstNumber * secondNumber));
+                    System.out.println();
+
+                    break;
+                case 4:
+                    System.out.println("Selected Operation: Division ");
+                    if (secondNumber == 0) {
+                        System.out.println("Error: Division by zero is not allowed ");
+                        System.out.println();
+
+                    } else {
+                        System.out.println("Result: " + (firstNumber / secondNumber));
+                        System.out.println();
+
+                    }
+                    break;
+                case 5:
+                    System.out.println("Selected Operation: Remainder");
+                    if (secondNumber == 0) {
+                        System.out.println("Error: Remainder by zero is not allowed ");
+                        System.out.println();
+
+                    } else {
+                        System.out.println("Result: " + (firstNumber % secondNumber));
+                        System.out.println();
+
+                    }
+                    break;
+                case 6:
+                    System.out.println("Selected Operation: Increment First Number");
+                    System.out.println("Result: " + (++firstNumber));
+                    System.out.println();
+
+                    break;
+                case 7:
+                    System.out.println("Selected Operation: Decrement Second Number");
+                    System.out.println("Result: " + (--secondNumber));
+                    System.out.println();
+
+                    break;
+                case 8:
+                    System.out.println("Selected Operation: Compare Numbers");
+                    String comparision = (firstNumber > secondNumber) ? "First Number is Greater" : (firstNumber < secondNumber) ? "Second Number is Greater" : "Both Numbers are Equal";
+                    System.out.println("Result: " + comparision);
+                    System.out.println();
+
+                    break;
+                case 9:
+                    System.out.println("Selected Operation: Change Sign");
+
+                    firstNumber = -firstNumber;
+                    secondNumber = +secondNumber;
+
+                    System.out.println("Updated First Number: " + firstNumber);
+                    System.out.println("Updated Second Number: " + secondNumber);
+                    break;
+                case 10:
+                    System.out.println("Selected Operation:Exit");
+                    System.out.println("Operator Explorer Closed.");
+                    System.out.println();
+
+                    break;
+                default:
+                    System.out.println("Selected Operation: Invalid choice");
+                    System.out.println("Invalid menu choice: " + choice);
+                    System.out.println();
+
+                    break;
+            }
+
+            operation++;
+
+        } while (choice != 10);
+
+        System.out.println();
+    }
+}
